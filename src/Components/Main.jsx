@@ -4,6 +4,7 @@ import Form from './Form'
 import Home from './Home';
 import {makeStyles} from '@mui/styles';
 import Selectformet from './Selectformet';
+import Res from './Res';
 
 const useStyles = makeStyles(
     {
@@ -23,6 +24,7 @@ const Main = () => {
 
         <Form/>
         <Selectformet/>
+        <Res/>
         </Box>
     
     </>

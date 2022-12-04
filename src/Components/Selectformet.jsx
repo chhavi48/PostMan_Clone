@@ -3,6 +3,7 @@ import { useState, useContext } from 'react';
 import { Box, Tabs, Tab } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import CreTable from './CreTable';
+import Createtext from './Createtext';
 
 // //components
 // import CreateTable from './CreateTable';
@@ -47,7 +48,7 @@ const Selectformat= () => {
                 aria-labelledby={`simple-tab-${0}`}
             >
                 {/* <CreateTable text={'Query Params'} data={paramData} setData={setParamData} /> */}
-                <CreTable/>
+                <CreTable text={'Query Params'} />
             </Box>
             <Box
                 role="tabpanel"
@@ -55,7 +56,7 @@ const Selectformat= () => {
                 id={`simple-tabpanel-${1}`}
                 aria-labelledby={`simple-tab-${1}`}
             >
-              <CreTable/>
+              <CreTable text={'Headers'} />
                 {/* <CreateTable text={'Headers'} data={headerData} setData={setHeaderData} /> */}
             </Box>
             <Box
@@ -64,6 +65,7 @@ const Selectformat= () => {
                 id={`simple-tabpanel-${2}`}
                 aria-labelledby={`simple-tab-${2}`}
             >
+              <Createtext/>
                 {/* <CreateJsonText /> */}
             </Box>
         </Box>
