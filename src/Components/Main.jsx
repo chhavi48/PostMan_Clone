@@ -1,8 +1,9 @@
-import { Box } from '@mui/material'
+import { Box, Select } from '@mui/material'
 import React from 'react'
 import Form from './Form'
 import Home from './Home';
 import {makeStyles} from '@mui/styles';
+import Selectformet from './Selectformet';
 
 const useStyles = makeStyles(
     {
@@ -19,7 +20,9 @@ const Main = () => {
     <>
         <Home/>
         <Box className={classses.component}>
+
         <Form/>
+        <Selectformet/>
         </Box>
     
     </>

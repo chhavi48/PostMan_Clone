@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@mui/styles';
 const useStyles=makeStyles({
     logo:{
-        width:200
+        width:200,
     }
 })
 const Home = () => {
