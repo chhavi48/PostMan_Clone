@@ -5,6 +5,7 @@ import Home from './Home';
 import {makeStyles} from '@mui/styles';
 import Selectformet from './Selectformet';
 import Res from './Res';
+import Err from './Err';
 
 const useStyles = makeStyles(
     {
@@ -25,6 +26,7 @@ const Main = () => {
         <Form/>
         <Selectformet/>
         <Res/>
+        {/* <Err/> */}
         </Box>
     
     </>
