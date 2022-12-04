@@ -1,14 +1,17 @@
 import './App.css';
 import Main from './Components/Main';
+import Dataprovider from './Context/Dataprovider';
 
 
 
 function App() {
   return (
-    <div className="App">
+  
+    <Dataprovider>
+        <Main/>
+    </Dataprovider>
 
-  <Main/>
-    </div>
+  
   );
 }
 

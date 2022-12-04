@@ -2,7 +2,8 @@ import { Button, MenuItem, Select, TextField} from '@mui/material'
 import { Box, height } from '@mui/system'
 import { makeStyles } from '@mui/styles';
 import React from 'react'
-
+import { useContext } from 'react';
+import { dataContext } from '../Context/Dataprovider';
 const useStyles = makeStyles(
     {
 
@@ -31,7 +32,8 @@ const useStyles = makeStyles(
 )
 
 const Form = () => {
-    const classses=useStyles()
+    const classses=useStyles();
+    const {formdata,setformdata}=useContext(dataContext)
   return (
    <>
    <Box className={classses.component}>
