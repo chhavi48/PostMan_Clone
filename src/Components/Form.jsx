@@ -34,12 +34,23 @@ const useStyles = makeStyles(
 const Form = () => {
     const classses=useStyles();
     const {formdata,setformdata}=useContext(dataContext)
+    const handleChange = (e) => {
+       setformdata({...formdata,type:e.target.value})
+       //log the form type
+   console.log(formdata)
+    }
+    const urlchange =(e)=>{
+      setformdata({...formdata,url:e.target.value})  
+    }
   return (
    <>
    <Box className={classses.component}>
    <Select
+   value={formdata.type}
     label="POST"
+    onChange={(e)=>handleChange(e)}
     className={classses.select}
+   
   >
     <MenuItem value={'GET'}>GET</MenuItem>
     <MenuItem value={'POST'}>POST</MenuItem>
@@ -47,6 +58,7 @@ const Form = () => {
   </Select>
   <TextField 
   className={classses.textfield}
+  onChange={(e)=>urlchange(e)}
   ></TextField>
 
 <Button

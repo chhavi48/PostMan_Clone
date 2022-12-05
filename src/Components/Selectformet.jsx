@@ -4,11 +4,9 @@ import { Box, Tabs, Tab } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import CreTable from './CreTable';
 import Createtext from './Createtext';
+import { dataContext } from '../Context/Dataprovider';
 
-// //components
-// import CreateTable from './CreateTable';
-// import CreateJsonText from './CreateJsonText';
-// import { DataContext } from '../context/DataProvider';
+
 
 const useStyles = makeStyles({
     component: {
@@ -25,8 +23,7 @@ const useStyles = makeStyles({
 const Selectformat= () => {
     const classes = useStyles();
     const [value, setValue] = useState(0);
-
-    // const { paramData, setParamData, headerData, setHeaderData } = useContext(DataContext);
+    const  {paramdata, setparamdata ,headerdata, setheaderdata}= useContext(dataContext)
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -47,8 +44,8 @@ const Selectformat= () => {
                 id={`simple-tabpanel-${0}`}
                 aria-labelledby={`simple-tab-${0}`}
             >
-                {/* <CreateTable text={'Query Params'} data={paramData} setData={setParamData} /> */}
-                <CreTable text={'Query Params'} />
+
+                <CreTable text={'Query Params'} data={paramdata}  setData={setparamdata}/>
             </Box>
             <Box
                 role="tabpanel"
@@ -56,8 +53,8 @@ const Selectformat= () => {
                 id={`simple-tabpanel-${1}`}
                 aria-labelledby={`simple-tab-${1}`}
             >
-              <CreTable text={'Headers'} />
-                {/* <CreateTable text={'Headers'} data={headerData} setData={setHeaderData} /> */}
+              <CreTable text={'Headers'} data={headerdata} setData={setheaderdata} />
+
             </Box>
             <Box
                 role="tabpanel"
@@ -66,7 +63,7 @@ const Selectformat= () => {
                 aria-labelledby={`simple-tab-${2}`}
             >
               <Createtext/>
-                {/* <CreateJsonText /> */}
+
             </Box>
         </Box>
     )

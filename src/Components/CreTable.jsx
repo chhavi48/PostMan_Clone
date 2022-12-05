@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     }
 });
 
-const CreTable = ({ text, data, setData }) => {
+const CreTable = ({ text, data,setdata }) => {
     const classes = useStyles();
     const [rows, addRows] = useState([0]);
     
@@ -36,18 +36,18 @@ const CreTable = ({ text, data, setData }) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <Addrow/>
-                    {/* {
+                    {/* <Addrow/> */}
+                {
                         rows.map((row, index) => {
                             return <Addrow
                                 addRows={addRows} 
                                 rowId={index} 
                                 key={index}
-                                setData={setData}
-                                data={data} 
+                                data={data}
+                                setdata={setdata}
                             />
-                        })
-                    } */}
+                        }) 
+                    } 
                 </TableBody>
             </Table>
         </Box>
