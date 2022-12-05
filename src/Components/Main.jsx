@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Form from './Form'
 import Home from './Home';
 import {makeStyles} from '@mui/styles';
@@ -8,7 +8,8 @@ import Res from './Res';
 import Err from './Err';
 import { useContext } from 'react';
 import { dataContext } from '../Context/Dataprovider';
-
+import {CheckParam} from "../Utils/CommonUtils";
+import Snake from './Snake';
 const useStyles = makeStyles(
     {
         component: {
@@ -20,9 +21,15 @@ const useStyles = makeStyles(
 
 const Main = () => {
     const classses=useStyles();
+    const [error,seterror]=useState(false)
+    const [errmsg,seterrmsg]=useState('');
     const {formdata,paramdata,headerdata,jsonText}= useContext(dataContext)
     
     const onsendClick=()=>{
+      if(!CheckParam(formdata,paramdata,headerdata,jsonText,seterrmsg)){
+          seterror(true)
+        return false;
+      }
       
     }
   return (
@@ -32,8 +39,9 @@ const Main = () => {
 
         <Form onsendClick={onsendClick}/>
         <Selectformet/>
-        <Res/>
-        {/* <Err/> */}
+        {/* <Res/> */}
+        <Err/>
+        {error && <Snake error={error} seterror={seterror} errmsg={errmsg}/>}
         </Box>
     
     </>
