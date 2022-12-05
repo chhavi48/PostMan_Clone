@@ -40,7 +40,7 @@ const Form = ({onsendClick}) => {
    console.log(formdata)
     }
     const urlchange =(e)=>{
-      setformdata({...formdata,url:e.target.value})  
+      setformdata({...formdata,url:e.target.value});
     }
   return (
    <>

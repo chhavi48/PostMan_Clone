@@ -8,17 +8,17 @@ const checkValidJson = (text) => {
     }
 }
 
-export const CheckParam = ({formdata,paramdata,headerdata,jsonText,seterrmsg}) => {
-   if(!formdata.Url){
-        seterrmsg("Request url not Missing")
-       return false;
-   }
-   if(!checkValidJson(jsonText)) {
-    // setErrorMsg('Text is not valid json');
-    seterrmsg("Text is not valid json")
-    return false;
-}
+export const checkParams = (formdata, jsonText, paramData, headerData, setErrorMsg) => {
 
-return true;
-}
+    if(!formdata.url) {
+        setErrorMsg('Request URL is empty!');
+        return false;
+    }
 
+    if(!checkValidJson(jsonText)) {
+        setErrorMsg('Text is not valid json');
+        return false;
+    }
+
+    return true;
+}

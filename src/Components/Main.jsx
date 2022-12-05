@@ -8,7 +8,7 @@ import Res from './Res';
 import Err from './Err';
 import { useContext } from 'react';
 import { dataContext } from '../Context/Dataprovider';
-import {CheckParam} from "../Utils/CommonUtils";
+import {checkParams} from "../Utils/CommonUtils"
 import Snake from './Snake';
 const useStyles = makeStyles(
     {
@@ -25,11 +25,12 @@ const Main = () => {
     const [errmsg,seterrmsg]=useState('');
     const {formdata,paramdata,headerdata,jsonText}= useContext(dataContext)
     
-    const onsendClick=()=>{
-      if(!CheckParam(formdata,paramdata,headerdata,jsonText,seterrmsg)){
-          seterror(true)
-        return false;
-      }
+    const onSendClick = async () => {
+        if(!checkParams(formdata, jsonText, paramdata, headerdata, seterrmsg)) {
+            // setError(true);
+            seterrmsg(true)
+            return false;
+        }
       
     }
   return (
@@ -37,7 +38,7 @@ const Main = () => {
         <Home/>
         <Box className={classses.component}>
 
-        <Form onsendClick={onsendClick}/>
+        <Form onsendClick={onSendClick}/>
         <Selectformet/>
         {/* <Res/> */}
         <Err/>
