@@ -24,6 +24,8 @@ const Main = () => {
     const classses=useStyles();
     const [error,seterror]=useState(false)
     const [errmsg,seterrmsg]=useState('');
+    const [errorResponse, setErrorResponse] = useState(false);
+    const [apiResponse, setApiResponse] = useState({})
     const {formdata,paramdata,headerdata,jsonText}= useContext(dataContext)
     
     const onSendClick = async () => {
@@ -33,7 +35,13 @@ const Main = () => {
             return false;
         }
      let response=   await getData(formdata, jsonText, paramdata, headerdata);
-      
+     console.log(response);
+     if (response === 'error') {
+         setErrorResponse(true);
+         return;
+     }
+     setErrorResponse(false);
+     setApiResponse(response.data) 
     }
   return (
     <>
@@ -43,7 +51,8 @@ const Main = () => {
         <Form onsendClick={onSendClick}/>
         <Selectformet/>
         {/* <Res/> */}
-        <Err/>
+    
+        {errorResponse ? <Err/> :<Res data={apiResponse}/>}
         {error && <Snake error={error} seterror={seterror} errmsg={errmsg}/>}
         </Box>
     

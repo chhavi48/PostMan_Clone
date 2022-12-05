@@ -36,7 +36,7 @@ const Addrow = ({addRows,rowId,data,setData}) => {
             setCheckCheckbox(false);
             result = { ...result, id: rowId, check: false }
         }
-        
+        // { Content-Type: 'application/json'}
         let index = data.findIndex((value) => value.id === Number(e.target.name));
         if (index === -1) {
             setData(oldArr => [...oldArr, result]);
