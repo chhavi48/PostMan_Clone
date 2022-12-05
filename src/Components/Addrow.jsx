@@ -19,28 +19,57 @@ const useStyles = makeStyles({
 
 });
 
-const Addrow = ({addRows,rowId,data,setdata}) => {
+const Addrow = ({addRows,rowId,data,setData}) => {
     const classes = useStyles();
-    const [checkcheckbox,setchcheckcheckbox] = useState(false)
-    const handleChange=(e)=>{
-        if (!checkcheckbox) {
-    setchcheckcheckbox(true);
-            addRows(oldArr => [...oldArr, rowId]);
-            // result = { ...result, id: rowId, check: true }
-        }
-        else{
-            setchcheckcheckbox(false);
-        }
 
+    const [checkCheckbox, setCheckCheckbox] = useState(false);
+    
+    const handleChange = (e) => {
+        
+        let result = data.filter(entry => entry.id === Number(e.target.name))[0];
+        
+        if (!checkCheckbox) {
+            setCheckCheckbox(true);
+            addRows(oldArr => [...oldArr, rowId]);
+            result = { ...result, id: rowId, check: true }
+        } else {
+            setCheckCheckbox(false);
+            result = { ...result, id: rowId, check: false }
+        }
+        
+        let index = data.findIndex((value) => value.id === Number(e.target.name));
+        if (index === -1) {
+            setData(oldArr => [...oldArr, result]);
+        } else {
+            const newArray = Object.assign([...data], {
+                [index]: result
+            });
+            setData(newArray)  
+
+        }
+        console.log(data);
     }
-    const ontextChange=(e)=>{
-         
+    
+    const ontextChange = (e) => {
+        let result = data.filter(entry => entry.id === rowId)[0];
+        result = { ...result, id: rowId, [e.target.name]: e.target.value }
+
+        let index = data.findIndex((value) => value.id === rowId);
+        
+        if (index === -1) {
+            setData(oldArr => [...oldArr, result]);
+        } else {
+            const newArray = Object.assign([...data], {
+                [index]: result
+            });
+            setData(newArray)    
+        }
     }
   return (
       <TableRow>
         <TableCell className={classes.tablecell}>
             <Checkbox
-            checked={checkcheckbox}
+            checked={checkCheckbox}
             onChange={(e)=>handleChange(e)}
             size='large'
             className={classes.checkbox}
@@ -51,6 +80,7 @@ const Addrow = ({addRows,rowId,data,setdata}) => {
             className={classes.textfield}
             inputProps={{style:{height:30,padding:'0 5px'}}}
             onChange={(e)=>ontextChange(e)}
+            name='key'
             />
         </TableCell>
         <TableCell  className={classes.tablecell}>
@@ -58,6 +88,7 @@ const Addrow = ({addRows,rowId,data,setdata}) => {
                         className={classes.textfield}
                         inputProps={{style:{height:30,padding:'0 5px'}}}
                         onChange={(e)=>ontextChange(e)}
+                        name='value'
             />
         </TableCell>
       </TableRow>

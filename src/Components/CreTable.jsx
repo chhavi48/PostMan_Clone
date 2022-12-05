@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     }
 });
 
-const CreTable = ({ text, data,setdata }) => {
+const CreTable = ({ text, data,setData }) => {
     const classes = useStyles();
     const [rows, addRows] = useState([0]);
     
@@ -44,7 +44,7 @@ const CreTable = ({ text, data,setdata }) => {
                                 rowId={index} 
                                 key={index}
                                 data={data}
-                                setdata={setdata}
+                                setData={setData}
                             />
                         }) 
                     } 
