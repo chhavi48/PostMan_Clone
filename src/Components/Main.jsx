@@ -10,6 +10,7 @@ import { useContext } from 'react';
 import { dataContext } from '../Context/Dataprovider';
 import {checkParams} from "../Utils/CommonUtils"
 import Snake from './Snake';
+import { getData } from '../Service/Api';
 const useStyles = makeStyles(
     {
         component: {
@@ -28,9 +29,10 @@ const Main = () => {
     const onSendClick = async () => {
         if(!checkParams(formdata, jsonText, paramdata, headerdata, seterrmsg)) {
             // setError(true);
-            seterrmsg(true)
+            seterror(true)
             return false;
         }
+     let response=   await getData(formdata, jsonText, paramdata, headerdata);
       
     }
   return (
