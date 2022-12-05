@@ -31,7 +31,7 @@ const useStyles = makeStyles(
     }
 )
 
-const Form = () => {
+const Form = ({onsendClick}) => {
     const classses=useStyles();
     const {formdata,setformdata}=useContext(dataContext)
     const handleChange = (e) => {
@@ -64,6 +64,8 @@ const Form = () => {
 <Button
 className={classses.Button}
 variant='contained'
+onClick={()=>onsendClick()}
+
 >Send</Button>
 
    </Box>

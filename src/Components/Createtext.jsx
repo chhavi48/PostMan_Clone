@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { TextareaAutosize, Typography } from '@mui/material';
 
-// import { DataContext } from '../context/DataProvider';
+import { dataContext } from '../Context/Dataprovider';
 
 const textareaStyle = { 
     width: '100%', 
@@ -17,10 +17,12 @@ const textareaStyle = {
 
 const Createtext = () => {
 
-    // const { setJsonText } = useContext(DataContext);
+   
+    const {setjsontext}=useContext(dataContext);
 
     const onValueChange = (e) => {
-        // setJsonText(e.target.value);
+    
+        setjsontext(e.target.value);
     }
 
     return (

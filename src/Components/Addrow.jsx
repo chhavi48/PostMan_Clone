@@ -73,6 +73,7 @@ const Addrow = ({addRows,rowId,data,setData}) => {
             onChange={(e)=>handleChange(e)}
             size='large'
             className={classes.checkbox}
+            name={rowId}
             />
         </TableCell>
         <TableCell  className={classes.tablecell}>
