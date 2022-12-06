@@ -16,4 +16,4 @@
 <img src="https://user-images.githubusercontent.com/77965216/205921467-b08418fd-0366-4f83-a098-1187efdbcb0e.png"/>
 
 
-<h3>Thanks for visiting ,,feel free to add other feathers just Clone the repo or you can DM me on linkdin for collaborating 🙂...</h3>
+<h3>Thanks for visiting ,,feel free to add other features just Clone the repo or you can DM me on linkdin for collaborating  👬...</h3>
