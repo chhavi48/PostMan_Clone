@@ -1,4 +1,4 @@
-<h1>PostMan Clone using the Reactjs. you can create the GET and POST request also i am working on this project and trying to add other requests.</h1>
+<h1>PostMan Clone using the Reactjs. you can create the GET and POST request,,, also i am working on this project and trying to add other requests.</h1>
 
 <h2> 1. Main Page</h2>
   <img src="https://user-images.githubusercontent.com/77965216/205920235-8dd9275d-67ca-4b54-bcc6-73f9a792a2b5.png"/>
