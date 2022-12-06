@@ -7,7 +7,7 @@
 <img src="https://user-images.githubusercontent.com/77965216/205920651-781f09e8-a0b9-4e7a-a59f-1d50f576f24c.png"/>
 
 <h2>3. If the url is not defined</h2>
-<img src=="https://user-images.githubusercontent.com/77965216/205920917-94eef5e7-f1aa-4ec0-abe4-dcdd7d5eda76.png"/>
+<img src="https://user-images.githubusercontent.com/77965216/205920917-94eef5e7-f1aa-4ec0-abe4-dcdd7d5eda76.png"/>
 
 <h2>4. If the body in not in json format </h2>
 <img src="https://user-images.githubusercontent.com/77965216/205921195-cd383b28-f08b-4780-b0aa-9ed94d32dea7.png"/>
